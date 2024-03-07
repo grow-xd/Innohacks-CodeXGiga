@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Translator",
+    "version": "1.0",
+    "description": "Translate websites laanguage",
+    "permissions": [
+      "activeTab",
+      "tabs",
+      "storage",
+      "contextMenus",
+      "file:///*"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "browser_action": {
+      
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "common.js",
+          "extractor.js",
+          "content.js"
+        ]
+      }
+    ]
+  }
